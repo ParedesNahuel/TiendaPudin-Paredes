@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../Card/Card'
 
-const Content = () => {
+const ItemListContainer = () => {
   return (
 
        <main className='d-flex justify-content-evenly'>
@@ -12,6 +12,7 @@ const Content = () => {
            boton={"Realizar Pedido"}
            colorbtn={"btn-danger"}
            Precio={"550"}
+
            />
            <Card
            texto={"Porción de Budin (200g) acompañado con cafe/té, Puede ser de vainilla, chocolate o Marmolado."} 
@@ -36,4 +37,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export default ItemListContainer
