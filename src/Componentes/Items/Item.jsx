@@ -5,18 +5,20 @@ const Card = ({titulo,imagen,texto,boton,colorbtn,Precio}) => {
 
       // const [Cantidad , SetCantidad] = useState (0)
 
-
+     function OnAdd() {
+      console.log("Mensaje de prueba")
+    }
 
   return (
     <div className="card" style={{width: "18rem"}}>
     <img src={imagen} className="card-img-top" alt="..."/>
-    <div className="card-body">
+    <div className="card-body" >
       <h5 className="card-title">{titulo}</h5>
       <div className='container'>
 
       <p className="card-text">{texto}</p>
       </div>
-     <ItemCount stock={5} />
+     <ItemCount stock={5} init={1} OnAdd/>
 
 <div className="input-group mb-3">
   <span className="input-group-text">$</span>
