@@ -1,13 +1,11 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../ItemCount/ItemCount';
 
 const Card = ({titulo,imagen,texto,boton,colorbtn,Precio}) => {
 
       // const [Cantidad , SetCantidad] = useState (0)
 
-     function OnAdd() {
-      console.log("Mensaje de prueba")
-    }
+     
 
   return (
     <div className="card" style={{width: "18rem"}}>
