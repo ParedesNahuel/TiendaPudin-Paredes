@@ -1,10 +1,10 @@
 
-import { useEffect } from 'react';
 import './App.css';
 
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import Navbar from './Componentes/Navbar/Navbar';
-import Promisep from './Componentes/Promise/Promise';
+import Rutas from './routes/Rutas';
+
 
 
 function App() {
@@ -27,10 +27,10 @@ function App() {
 
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/>
       <h1>Ofertas de la semana</h1>
-      <ItemListContainer/>
-
+      <ItemListContainer/> */}
+        <Rutas/>
     </div>
   );
 }

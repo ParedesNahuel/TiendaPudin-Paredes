@@ -3,25 +3,32 @@ import Item from '../Items/Item'
 
 const ItemList = ({listaProducto}) => {
   
-  const cantidad= listaProducto.length
+
   // console.log(cantidad)
 
   return (
 
 <>
-      { cantidad >0 ? listaProducto.map((Producto,index)=>
+
+      { listaProducto.length >0 ? 
+      (<div className='row'>
+        {
+          listaProducto.map((Producto,index)=>
       
-      
-        <Item key={index}
-              texto= {Producto.texto}
-              imagen = {Producto.imagen}
-              titulo= {Producto.titulo}
-              boton={Producto.boton}
-              colorbtn={Producto.colorbtn}
-              Precio={Producto.Precio}
-        />
-      
-      )
+
+          <Item key={index}
+                id={Producto.id}
+                texto= {Producto.texto}
+                imagen = {Producto.imagen}
+                titulo= {Producto.titulo}
+                boton={Producto.boton}
+                colorbtn={Producto.colorbtn}
+                Precio={Producto.Precio}
+          />
+        
+        )
+        }
+      </div>)
       :
       (
       <h1>
