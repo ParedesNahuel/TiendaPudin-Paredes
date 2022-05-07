@@ -8,8 +8,10 @@ export const DatosBE = [
       titulo: "Flan Vainilla 350g",
       boton: "Realizar Pedido",
       colorbtn: "btn-danger",
-      ingredientes: "vainilla 200g, caramelo 5g, cereza, leche, Indicaciones para alergicos, Sin TAC",
+      ingredientes: "vainilla 200g,\n caramelo 5g,\n cereza,\n leche,\n Indicaciones para alergicos, Sin TAC",
       Precio: "550",
+      Chef: "Mateo Palkoff",
+      FotoChef: "https://static3.ideal.es/ubeda/multimedia/202010/14/media/cortadas/ARV_olivas-k0xF-U120462613332sAD-1248x770@Ideal.jpg"
     },
     {
       id:453,
@@ -22,6 +24,8 @@ export const DatosBE = [
       colorbtn: "btn-danger",
       ingredientes: "chocolate 200g, caramelo 5g, cereza, leche, Indicaciones para alergicos, Sin TAC",
       Precio: "640",
+      Chef: "Lydia Castillo",
+      FotoChef:"https://previews.123rf.com/images/lacheev/lacheev1802/lacheev180200106/95364220-una-mujer-pastelera-decoraci%C3%B3n-un-pastel-en-la-cocina-una-pasteler%C3%ADa-.jpg"
     },
     {
       id:589,
@@ -33,5 +37,8 @@ export const DatosBE = [
       colorbtn: "btn-danger",
       ingredientes: "Vainilla y limon 200g, caramelo 5g, cereza, leche, Indicaciones para alergicos, Sin TAC",
       Precio: "500",
+      Chef: "Enrique Zabbala",
+      FotoChef:"https://www.eltiempo.com/files/image_640_428/uploads/2017/12/02/5a2318212ecee.jpeg"
+
     }
   ];
