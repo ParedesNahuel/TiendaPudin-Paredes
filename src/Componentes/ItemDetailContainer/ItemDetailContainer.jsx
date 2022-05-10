@@ -2,16 +2,18 @@ import React from 'react'
 import {useEffect,useState} from 'react'
 import { DatosBE } from '../../config';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useLocation, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {
-  const {id}= useParams();
-  const location = useLocation();
+  const {Id}= useParams();
+
   const [producto, SetProducto] = useState();
 
-  const p= DatosBE.find(x=> x.id = id)
-  console.log(p);  
+  let p = DatosBE.find(
+    x=>{ return x.id=== parseInt(Id)}
+  )
+
 
   useEffect(() => {
     const DetalleProducto = new Promise((resolve, reject) => {

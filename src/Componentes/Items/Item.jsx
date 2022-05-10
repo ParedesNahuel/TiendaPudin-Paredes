@@ -9,7 +9,7 @@ const Card = ({id,titulo,imagen,texto,boton,colorbtn,Precio}) => {
      
 
   return (
-    <div className='col col-12'>
+    <div className='col col-md-4'>
 <div className="card" style={{width: "18rem"}}>
     <img src={imagen} className="card-img-top" alt="..."/>
     <div className="card-body" >

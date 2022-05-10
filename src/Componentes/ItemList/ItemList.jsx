@@ -4,7 +4,7 @@ import Item from '../Items/Item'
 const ItemList = ({listaProducto}) => {
   
 
-  // console.log(cantidad)
+  console.log(listaProducto)
 
   return (
 
@@ -13,6 +13,7 @@ const ItemList = ({listaProducto}) => {
       { listaProducto.length >0 ? 
       (<div className='row'>
         {
+          
           listaProducto.map((Producto,index)=>
       
 
@@ -31,9 +32,9 @@ const ItemList = ({listaProducto}) => {
       </div>)
       :
       (
-      <h1>
-        cargando...
-      </h1>
+        <div className="spinner-border text-secondary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
 
       )
        }
