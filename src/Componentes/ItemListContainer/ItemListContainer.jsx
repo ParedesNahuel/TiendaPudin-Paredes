@@ -32,14 +32,21 @@ const ItemListContainer = () => {
       .catch((err) => console.log(err))
       .then(() => console.log(listado));
       console.log(listado);
-      return() =>{<div className="spinner-border text-secondary" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </div>};
+      return() =>{SetListado([])};
   }, [idCategoria]);
 
   return (
     <main className="d-flex justify-content-evenly">
-      <ItemList listaProducto={listado} />
+     {
+       listado.length>0 ?
+       
+     <ItemList listaProducto={listado} />
+
+     :
+     <div className="spinner-border text-secondary" role="status">
+  <span className="visually-hidden">Loading...</span>
+  </div>
+    }
     </main>
   );
 };
