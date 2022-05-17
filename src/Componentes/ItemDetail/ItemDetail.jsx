@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { GlobalProvider } from "../../Contents/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ prod }) => {
@@ -8,12 +9,14 @@ const ItemDetail = ({ prod }) => {
     backgroundColor: "#1a202c",
     padding: "30px",
   };
-    const [compra, SetCompra]= useState(0)
+  const [compra, SetCompra] = useState(0);
+  const { CarritoActual } = useContext(GlobalProvider);
 
-  const quantityToAdd = (cant) =>{
-    SetCompra(cant)
-  }
- console.log(compra)
+  const quantityToAdd = (cant) => {
+    SetCompra(cant);
+  };
+  console.log(compra);
+  console.log(prod.ingredientes.split(','));
   return (
     <>
       <div className="text-center" style={mystyle}>
@@ -23,40 +26,54 @@ const ItemDetail = ({ prod }) => {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-7">
             <h3>Ingredientes:</h3>
             <p className="text-start">{prod.ingredientes}</p>
           </div>
-          <div className="col">
+          <div className="col-md-5">
             <img
               src={prod.FotoChef}
-              className="rounded float-end"
-              width={300}
-              height={300}
+              className="rounded"
+              width={"100%"}
               alt="..."
             />
           </div>
         </div>
-        <div>
-          <div
-            className="row; border border-2"
-            style={{ width: 399, alignContent: "center" ,margin:"4px"}}
-          >
-            {
-                compra===0 ?
-            <div className="col-md-5">
-              <div>
-              <h2> Pedido</h2>
-                <ItemCount idprod={prod.id} stock={5} init={compra} OnAdd={quantityToAdd}/>
-              </div>
-            </div>
-            :
-            <div>
-              <Link to={`/Cart`} className="btn btn-success">Finalizar</Link>
-            </div>
-            }
 
-          </div>
+        <div className="row border border-2">
+          {compra === 0 ? (
+            <>
+              <div className="col-md-7"></div>
+              <div className="col-md-5 text-center">
+                <div className="row">
+                <div className="col-md-3"></div>
+                <div className="col-md-6">
+                  <div>
+                    <h2> Pedido</h2>
+
+                    <ItemCount
+                      idprod={prod.id}
+                      stock={5}
+                      init={compra}
+                      OnAdd={quantityToAdd}
+                    />
+                  </div>
+                </div>
+                <div className="col-md-3"></div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div>
+              <Link
+                to={`/Cart`}
+                onClick={() => CarritoActual(prod, compra)}
+                className="btn btn-success"
+              >
+                Finalizar
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>

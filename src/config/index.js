@@ -13,7 +13,9 @@ export const DatosBE = [
       Chef: "Mateo Palkoff",
       FotoChef: "https://static3.ideal.es/ubeda/multimedia/202010/14/media/cortadas/ARV_olivas-k0xF-U120462613332sAD-1248x770@Ideal.jpg",
       Categoria: "Acompañamiento",
-      idCategoria: 3
+      idCategoria: 3,
+      stock: 10,
+      CantPedidas:0
     },
     {
       id:453,
@@ -29,7 +31,9 @@ export const DatosBE = [
       Chef: "Lydia Castillo",
       FotoChef:"https://previews.123rf.com/images/lacheev/lacheev1802/lacheev180200106/95364220-una-mujer-pastelera-decoraci%C3%B3n-un-pastel-en-la-cocina-una-pasteler%C3%ADa-.jpg",
       Categoria: "Acompañamiento",
-      idCategoria:3
+      idCategoria:3,
+      stock: 10,
+      CantPedidas:0
     },
     {
       id:589,
@@ -44,7 +48,9 @@ export const DatosBE = [
       Chef: "Enrique Zabbala",
       FotoChef:"https://www.eltiempo.com/files/image_640_428/uploads/2017/12/02/5a2318212ecee.jpeg",
       Categoria: "Acompañamiento",
-      idCategoria: 3
+      idCategoria: 3,
+      stock: 10,
+      CantPedidas:0
     },
     {
       id:32,
@@ -60,7 +66,9 @@ export const DatosBE = [
       Chef: "Francisco Castro",
       FotoChef:"https://previews.123rf.com/images/lightfieldstudios/lightfieldstudios1711/lightfieldstudios171103053/89865217-barista-preparando-caf%C3%A9.jpg",
       Categoria:"Bebida caliente",
-      idCategoria:2
+      idCategoria:2,
+      stock: 10,
+      CantPedidas:0
     },
     {
       id:765,
@@ -76,7 +84,9 @@ export const DatosBE = [
       Chef: "Francisco Castro",
       FotoChef:"https://previews.123rf.com/images/lightfieldstudios/lightfieldstudios1711/lightfieldstudios171103053/89865217-barista-preparando-caf%C3%A9.jpg"
       ,Categoria:"Bebida caliente",
-      idCategoria:2
+      idCategoria:2,
+      stock: 10,
+      CantPedidas:0
     },
     {
       id:895,
@@ -92,6 +102,8 @@ export const DatosBE = [
       Chef: "Francisco Castro",
       FotoChef:"https://previews.123rf.com/images/lightfieldstudios/lightfieldstudios1711/lightfieldstudios171103053/89865217-barista-preparando-caf%C3%A9.jpg",
       Categoria:"Bebida caliente",
-      idCategoria:2
+      idCategoria:2,
+      stock: 10,
+      CantPedidas:0
     }
   ];

@@ -30,17 +30,6 @@ const Navbar = () => {
         <li  className="nav-item">
         <NavLink  className="nav-link" to={`/Categoria/${3}`}>Postres</NavLink>
         </li>
-        {/* <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Herramientas
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Usuario</a></li>
-            <li><a className="dropdown-item" href="#">Cuenta Corriente</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Ayuda</a></li>
-          </ul>
-        </li> */}
        
       </ul>
     <div className='col-7'></div>
