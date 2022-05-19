@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react'
 import { DatosBE } from '../../config';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {  useParams } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 
 
 const ItemDetailContainer = () => {
@@ -35,9 +36,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-        {producto ? <ItemDetail prod={producto}/> : <div className="spinner-border text-secondary" role="status">
-  <span className="visually-hidden">Loading...</span>
-</div> }
+        {producto ? <ItemDetail prod={producto}/> : <Loader/>}
         
         
     </>

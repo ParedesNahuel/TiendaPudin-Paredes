@@ -1,6 +1,7 @@
 import "./App.css";
 import GlobalStateContext from "./Contents/CartContext";
 import Rutas from "./routes/Rutas";
+import "./style/Style.css";
 
 function App() {
   return (

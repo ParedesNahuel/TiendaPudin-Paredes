@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { DatosBE } from "../../config";
 import {  useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 
 const ItemListContainer = () => {
@@ -43,9 +44,7 @@ const ItemListContainer = () => {
      <ItemList listaProducto={listado} />
 
      :
-     <div className="spinner-border text-secondary" role="status">
-  <span className="visually-hidden">Loading...</span>
-  </div>
+    <Loader/>
     }
     </main>
   );

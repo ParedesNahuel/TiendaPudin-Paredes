@@ -3,7 +3,7 @@ import { GlobalProvider } from '../Contents/CartContext'
 
 const Cart = () => {
   
-  const {productosCarrito,SetProductocarrito,QuitarDelCarrito} = useContext(GlobalProvider)
+  const {productosCarrito,SetProductocarrito,QuitarDelCarrito,RestarDelCarritoTotal,SetCantTotal} = useContext(GlobalProvider)
   
   return (
 
@@ -16,7 +16,13 @@ const Cart = () => {
         {item.titulo}
      </li>
         <label >{item.CantPedidas}</label>
-        <button className='btn btn-success'type='button' onClick={()=>QuitarDelCarrito(item.id)}>
+        <button className='btn btn-success'type='button' onClick={ ()=>
+          {
+            QuitarDelCarrito(item.id);
+            RestarDelCarritoTotal(item.id);
+          }
+          
+          }>
         eliminar
         </button>
      </div>
@@ -24,8 +30,11 @@ const Cart = () => {
      <h1>Carrito vacio</h1>
      }
    </ul>
-    <button onClick={
-      ()=> SetProductocarrito([])
+    <button onClick={ ()=>
+      {
+        SetProductocarrito([]);
+        SetCantTotal(0);
+      }
     } >LimpiarCarrito</button>
     </>
 
