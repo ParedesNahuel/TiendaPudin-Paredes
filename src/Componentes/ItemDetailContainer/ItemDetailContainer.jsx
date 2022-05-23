@@ -4,6 +4,8 @@ import { DatosBE } from '../../config';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {  useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import { doc, getDoc } from 'firebase/firestore';
+import db  from '../../Server/firebase';
 
 
 const ItemDetailContainer = () => {
@@ -17,21 +19,13 @@ const ItemDetailContainer = () => {
 
 
   useEffect(() => {
-    const DetalleProducto = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(p);
-      }, 2000);
-    });
-
-    DetalleProducto.then(
-      (res) => {
-        SetProducto(res);
-      }
-    )
-      .catch((err) => console.log(err))
-      .then(() => console.log(producto));
-      console.log(producto);
-      return() =>{};
+    const DetalleProducto = 
+     doc(db,'Productos',Id)
+      getDoc(DetalleProducto).then((snapshot)=>{ // snapshot es la informacion
+          if(snapshot.exists()){
+            SetProducto({id:snapshot.id, ...snapshot.data()});
+          }
+      }) 
   }, []);
 
   return (

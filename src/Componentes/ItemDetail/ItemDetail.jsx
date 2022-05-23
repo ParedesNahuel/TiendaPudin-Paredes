@@ -20,7 +20,6 @@ const ItemDetail = ({ prod }) => {
   };
 
   console.log(compra);
-  console.log(prod.ingredientes.split(","));
   return (
     <>
       <div className="text-center" style={mystyle}>

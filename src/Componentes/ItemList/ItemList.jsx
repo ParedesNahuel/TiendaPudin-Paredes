@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from '../Items/Item'
+import Loader from '../Loader/Loader'
 
 const ItemList = ({listaProducto}) => {
   
@@ -11,7 +12,7 @@ const ItemList = ({listaProducto}) => {
 <>
 
       { listaProducto.length >0 ? 
-      (<div className='row'>
+      (<div className='row mr-0 ml-0' >
         {
           
           listaProducto.map((Producto,index)=>
@@ -32,9 +33,7 @@ const ItemList = ({listaProducto}) => {
       </div>)
       :
       (
-        <div className="spinner-border text-secondary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
+       <Loader/>
 
       )
        }

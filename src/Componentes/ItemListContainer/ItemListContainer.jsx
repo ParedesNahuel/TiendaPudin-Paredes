@@ -3,6 +3,9 @@ import ItemList from "../ItemList/ItemList";
 import { DatosBE } from "../../config";
 import {  useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import db  from "../../Server/firebase";
+import {collection, Doc, getDoc , getDocs} from  "firebase/firestore";
+import { setLogLevel } from "firebase/app";
 
 
 const ItemListContainer = () => {
@@ -18,22 +21,25 @@ const ItemListContainer = () => {
       }
   }
 
-  useEffect(() => {
-    const TraerProductos = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(listaFiltrada);
-      }, 2000);
-    });
+  
 
-    TraerProductos.then(
-      (res) => {
-        SetListado(res);
+  useEffect(() => {
+    const TraerProductos = collection(db,"Productos");
+    getDocs(TraerProductos).then((snapshot)=>{
+      if(snapshot.size===0){
+        console.log("No results");
       }
-    )
-      .catch((err) => console.log(err))
-      .then(() => console.log(listado));
-      console.log(listado);
-      return() =>{SetListado([])};
+      let l = snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()}))
+      console.log(l)
+      console.log(idCategoria)
+      if(idCategoria == null){
+        SetListado(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})));
+      }else{
+        SetListado(l.filter(x=> x.idCategoria=== parseInt( idCategoria)))
+      }
+      
+      
+    })
   }, [idCategoria]);
 
   return (
